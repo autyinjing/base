@@ -1,21 +1,25 @@
 /* ***********************************************************************
 
-  > File Name: test.c
+  > File Name: fork.c
   > Author: Aut
   > Mail: aut@taomee.com 
-  > Created Time: Tue 14 Nov 2017 03:44:14 PM CST
+  > Created Time: Mon 20 Nov 2017 03:19:06 PM CST
 
  ********************************************************************** */
 
 #include "csapp.h"
-#include <string.h>
 
 int main(int argc, const char* argv[])
 {
-    /*char *errstr = "Hello World!";*/
-    /*unix_error(errstr);*/
+    pid_t pid;
+    int x = 1;
 
-    fprintf(stderr, "%s\n", strerror(errno));
+    pid = Fork();
+    if (pid == 0) {
+        printf("child: x = %d\n", ++x);
+        exit(0);
+    }
 
-    return 0;
+    printf("parent: x = %d\n", --x);
+    exit(0);
 }

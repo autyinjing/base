@@ -19,7 +19,7 @@
 #include <sys/wait.h>
 #include <pthread.h>
 #include <errno.h>
-//#include <string.h>
+#include <string.h>
 
 void unix_error(char *msg);
 void posix_error(int code, char *msg);

@@ -1,21 +1,20 @@
 /* ***********************************************************************
 
-  > File Name: test.c
+  > File Name: fork2.c
   > Author: Aut
   > Mail: aut@taomee.com 
-  > Created Time: Tue 14 Nov 2017 03:44:14 PM CST
+  > Created Time: Mon 20 Nov 2017 03:23:11 PM CST
 
  ********************************************************************** */
 
 #include "csapp.h"
-#include <string.h>
 
 int main(int argc, const char* argv[])
 {
-    /*char *errstr = "Hello World!";*/
-    /*unix_error(errstr);*/
+    Fork();
+    Fork();
+    Fork();
+    printf("hello\n");
 
-    fprintf(stderr, "%s\n", strerror(errno));
-
-    return 0;
+    exit(0);
 }
